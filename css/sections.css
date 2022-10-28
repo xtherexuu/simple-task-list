@@ -1,0 +1,61 @@
+.section {
+    background-color: white;
+    box-shadow: 0 0 20px 1px #777;
+    border-radius: 20px;
+    padding: 0 20px 20px;
+    margin-bottom: 40px;
+}
+
+.section__heading {
+    font-size: 27px;
+    margin-bottom: 20px;
+    padding: 20px 0 20px 20px;
+    border-bottom: solid #ddd 2px;
+}
+
+.section__input {
+    width: 80%;
+    padding: 5px;
+    border-radius: 20px;
+    margin-right: 20px;
+    border: solid 2px #ddd;
+}
+
+@media (max-width: 854px) {
+    .section__input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+.section__button {
+    width: calc(20% - 24px);
+    padding: 5px;
+    background-color: teal;
+    color: white;
+    border-radius: 20px;
+}
+
+@media (max-width: 854px) {
+    .section__button {
+        width: 100%;
+    }
+}
+
+.section__list {
+    margin-top: 40px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.helpButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.div__helpButton {
+    background-color: teal;
+    padding: 5px;
+    color: white;
+    margin: 5px;
+}

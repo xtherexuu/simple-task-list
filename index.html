@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/main.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/header.css" />
+        <link rel="stylesheet" href="css/sections.css" />
+        <link rel="stylesheet" href="css/list.css" />
+
+        <script defer src="js/script.js"></script>
+        <title>Lista Zadań</title>
+    </head>
+    <body class="body">
+        <div class="wrapper">
+            <header class="header">
+                <h1 class="header__heading">Lista zadań</h1>
+            </header>
+            <section class="section">
+                <h2 class="section__heading">Dodaj nowe zadanie</h2>
+                <form class="section__form js-form">
+                    <input class="section__input js-newTask" placeholder="Co jest do zrobienia?"/>
+                    <button class="section__button">Dodaj zadanie</button>
+                </form>
+            </section>
+            <section class="section">
+                <h2 class="section__heading">Lista zadań</h2>
+                <div class="helpButtons">
+                    <button class="div__helpButton js-toggleCheckedVisibility">Ukryj ukończone</button>
+                    <button class="div__helpButton js-toggleCheckAll">Zaznacz wszystkie</button>
+                </div>
+                <ul class="section__list">
+                    <li class="list__item"><button class="list__button list__button--toggleDoneItem js-check">✔</button><span class="list__itemText">vsvsdv fsdfsd f sd fsdffsdfsdfdsfdf df dsfdsfsd fdsfsd fsd</span><button class="list__button list__button--removeitem js-remove">🗑</button></li>
+                    <li class="list__item"><button class="list__button list__button--toggleDoneItem js-check"></button><span class="list__itemText">vsvsdv</span><button class="list__button list__button--removeitem js-remove">🗑</button></li>
+                </ul>
+            </section>
+        </div>
+    </body>
+</html>

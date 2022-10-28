@@ -1,0 +1,29 @@
+.list__item {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    margin-bottom: 20px;
+    padding: 0 0 20px 20px;
+    border-bottom: solid #ddd 2px;
+}
+
+.list__button {
+    margin-right: 20px;
+    padding: 5px;
+}
+
+.list__button--toggleDoneItem {
+    background-color: green;
+    color: white;
+    border: none;
+}
+
+.list__button--removeitem {
+    background-color: red;
+    color: white;
+    border: none;
+}
+
+.list__itemText {
+    padding: 5px;
+    word-break: break-all;
+}

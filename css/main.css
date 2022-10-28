@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+html, ::after, ::before {
+    box-sizing: inherit;
+}
+
+.body {
+    background-color: #ddd;
+}
+
+.wrapper {
+    max-width: 85%;
+    margin: 0 auto;
+}
