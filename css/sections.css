@@ -42,6 +42,10 @@
     }
 }
 
+.section__button:hover {
+   cursor: pointer; 
+}
+
 .section__list {
     margin-top: 40px;
     list-style-type: none;
@@ -58,4 +62,8 @@
     padding: 5px;
     color: white;
     margin: 5px;
+}
+
+.div__helpButton:hover {
+    cursor: pointer;
 }
