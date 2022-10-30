@@ -33,7 +33,7 @@
         render();
     };
 
-    const checkIfAllTaskCheckedOrNotIfYesChangeButtonName = () => {
+    const checkIfAllTaskDoneOrNot_ifYes_switchButtonName = () => {
         const allTasksChecked = tasks.every((tasks) => tasks.done === true);
         const allTasksUnchecked = tasks.every((tasks) => tasks.done === false);
 
@@ -58,10 +58,11 @@
 
         if (!newTaskElement.value.trim()) {
             newTaskElement.value = "";
-            return;
+            return newTaskElement.focus();
         }
 
         addNewTask(newTaskElement);
+        return newTaskElement.focus();
     };
 
     const removeTask = (taskIndex) => {
@@ -72,7 +73,7 @@
 
     const toggleTaskDone = (taskIndex) => {
         tasks[taskIndex].done = !tasks[taskIndex].done;
-        checkIfAllTaskCheckedOrNotIfYesChangeButtonName();
+        checkIfAllTaskDoneOrNot_ifYes_switchButtonName();
         render();
     };
 
