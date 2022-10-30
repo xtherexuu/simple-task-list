@@ -33,7 +33,7 @@
         render();
     };
 
-    const checkIfAllTaskDoneOrNot_ifYes_switchButtonName = () => {
+    const toggleAllTasksDoneButtonName = () => {
         const allTasksChecked = tasks.every((tasks) => tasks.done === true);
         const allTasksUnchecked = tasks.every((tasks) => tasks.done === false);
 
@@ -73,7 +73,7 @@
 
     const toggleTaskDone = (taskIndex) => {
         tasks[taskIndex].done = !tasks[taskIndex].done;
-        checkIfAllTaskDoneOrNot_ifYes_switchButtonName();
+        toggleAllTasksDoneButtonName();
         render();
     };
 
