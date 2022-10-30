@@ -15,13 +15,13 @@
 
 .section__input {
     width: 80%;
-    padding: 5px;
+    padding: 8px;
     border-radius: 20px;
     margin-right: 20px;
     border: solid 2px #ddd;
 }
 
-@media (max-width: 854px) {
+@media (max-width: 888px) {
     .section__input {
         width: 100%;
         margin-bottom: 10px;
@@ -30,13 +30,13 @@
 
 .section__button {
     width: calc(20% - 24px);
-    padding: 5px;
+    padding: 8px;
     background-color: teal;
     color: white;
     border-radius: 20px;
 }
 
-@media (max-width: 854px) {
+@media (max-width: 888px) {
     .section__button {
         width: 100%;
     }
@@ -53,15 +53,22 @@
 }
 
 .helpButtons {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 470px) {
+    .helpButtons {
+        grid-template-columns: 1fr;
+    }
 }
 
 .div__helpButton {
     background-color: teal;
-    padding: 5px;
+    padding: 8px;
     color: white;
     margin: 5px;
+    border-radius: 20px;
 }
 
 .div__helpButton:hover {
