@@ -1,6 +1,7 @@
 .list__item {
     display: grid;
     grid-template-columns: 50px 1fr 50px;
+    align-items: center;
     margin-bottom: 20px;
     padding: 0 0 20px 20px;
     border-bottom: solid #ddd 2px;
@@ -9,6 +10,7 @@
 .list__button {
     margin-right: 20px;
     padding: 5px;
+    height: 30px;
 }
 
 .list__button--toggleDoneTask {
