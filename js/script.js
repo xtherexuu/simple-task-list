@@ -17,33 +17,20 @@
     };
 
     const toggleDoneAllTasks = () => {
-        if (toggleDoneAllTasksButtonElement.innerText === "Zaznacz wszystkie") {
-            tasks = tasks.map((task) => {
-                return { task: task.task, done: true };
-            });
-
-            toggleDoneAllTasksButtonElement.innerText = "Odznacz Wszystkie";
-        } else {
-            tasks = tasks.map((task) => {
-                return { task: task.task, done: false };
-            });
-
-            toggleDoneAllTasksButtonElement.innerText = "Zaznacz wszystkie";
-        }
+        tasks = tasks.map((task) => {
+            return { task: task.task, done: true };
+        });
 
         render();
     };
 
     const toggleAllTasksDoneButtonName = () => {
         const allTasksChecked = tasks.every((tasks) => tasks.done === true);
-        const allTasksUnchecked = tasks.every((tasks) => tasks.done === false);
 
         if (allTasksChecked) {
-            toggleDoneAllTasksButtonElement.innerText = "Odznacz Wszystkie";
-        } else if (allTasksUnchecked) {
-            toggleDoneAllTasksButtonElement.innerText = "Zaznacz wszystkie";
+            toggleDoneAllTasksButtonElement.disabled = true;
         } else {
-            return;
+            toggleDoneAllTasksButtonElement.disabled = false;
         }
     };
 
