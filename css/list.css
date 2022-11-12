@@ -1,14 +1,19 @@
+.section__list {
+    margin-top: 20px;
+    list-style-type: none;
+    padding: 0;
+}
+
 .list__item {
     display: grid;
-    grid-template-columns: 50px 1fr 50px;
+    grid-template-columns: 70px 1fr 70px;
     align-items: center;
     margin-bottom: 20px;
-    padding: 0 0 20px 20px;
+    padding: 0 0 20px 0px;
     border-bottom: solid #ddd 2px;
 }
 
 .list__button {
-    margin-right: 20px;
     padding: 5px;
     height: 30px;
 }
@@ -18,12 +23,14 @@
 }
 
 .list__button--toggleDoneTask {
+    margin: 0 20px;
     background-color: green;
     color: white;
     border: none;
 }
 
 .list__button--removeTask {
+    margin: 0 20px;
     background-color: red;
     color: white;
     border: none;

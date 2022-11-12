@@ -1,9 +1,7 @@
 .section {
     background-color: white;
-    box-shadow: 0 0 20px 1px #777;
-    border-radius: 20px;
-    padding: 0 20px 20px;
-    margin-bottom: 40px;
+    padding: 0 0 20px;
+    margin-bottom: 20px;
 }
 
 .section__heading {
@@ -13,62 +11,125 @@
     border-bottom: solid #ddd 2px;
 }
 
-.section__input {
-    width: 80%;
-    padding: 8px;
-    border-radius: 20px;
-    margin-right: 20px;
-    border: solid 2px #ddd;
-}
-
-@media (max-width: 888px) {
-    .section__input {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}
-
-.section__button {
-    width: calc(20% - 24px);
-    padding: 8px;
-    background-color: teal;
-    color: white;
-    border-radius: 20px;
-}
-
-@media (max-width: 888px) {
-    .section__button {
-        width: 100%;
-    }
-}
-
-.section__button:hover {
-   cursor: pointer; 
-}
-
-.section__list {
-    margin-top: 40px;
-    list-style-type: none;
-    padding: 0;
-}
-
-.helpButtons {
+.addTaskContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr auto;
 }
 
-@media (max-width: 470px) {
-    .helpButtons {
+@media (max-width: 800px) {
+    .addTaskContainer {
         grid-template-columns: 1fr;
     }
 }
 
-.div__helpButton {
-    background-color: teal;
+.section__input {
     padding: 8px;
+    margin-left: 20px;
+    border: solid 2px #ddd;
+}
+
+@media (max-width: 800px) {
+    .section__input {
+        margin-right: 20px;
+    }
+}
+
+
+.section__button {
+    padding: 8px;
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: teal;
     color: white;
-    margin: 5px;
-    border-radius: 20px;
+    border: none;
+    transition: 1s;
+}
+
+.section__button:hover {
+    transform: scale(1.1);
+    background-color: hsl(180, 100%, 40%);
+}
+
+@media (max-width: 800px) {
+    .section__button {
+        margin: 20px 20px 0 20px;
+    }
+
+    .section__button:hover {
+        transform: scale(1.05);
+    }
+}
+
+.section__button:hover {
+    cursor: pointer;
+}
+
+
+/* next section */
+
+.taskListHeaderContainer {
+    display: grid;
+    grid-template-areas: "h2 x hidingButton checkingAllButton";
+    grid-template-columns: auto 1fr auto auto;
+    border-bottom: 2px solid #ddd;
+}
+
+@media (max-width: 800px) {
+    .taskListHeaderContainer {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+    }
+}
+
+.section__heading--borderBottomRemoved {
+    margin: 0;
+    border: none;
+    display: inline-block;
+    /* grid-area: h2; */
+}
+
+.section__list {
+    margin-top: 20px;
+    list-style-type: none;
+}
+
+.div__helpButton {
+    background-color: transparent;
+    border: none;
+    color: teal;
+    padding-right: 20px;
+    font-size: 18px;
+    transition: 1s;
+}
+
+.div__helpButton:hover {
+    color: hsl(180, 100%, 40%);
+}
+
+@media (max-width: 800px) {
+    .div__helpButton {
+        margin-bottom: 20px;
+    }
+}
+
+.div__helpButton--toggleVisibility {
+    grid-area: hidingButton;
+}
+
+@media (max-width: 800px) {
+    .div__helpButton--toggleVisibility {
+        grid-area: unset;
+    }
+}
+
+.div__helpButton--toggleDonekAll {
+    grid-area: checkingAllButton;
+}
+
+@media (max-width: 800px) {
+    .div__helpButton--toggleDonekAll {
+        grid-area: unset;
+    }
 }
 
 .div__helpButton:hover {
