@@ -1,7 +1,8 @@
 {
-    const tasks = [];
+    let tasks = [];
     let hiddenTaskStatus = "";
     const toggleDoneAllTasksButtonElement = document.querySelector(".js-toggleDoneAllTasks");
+    const toggleDoneTasksVisibilityButtonElement = document.querySelector(".js-toggleDoneTasksVisibility");
 
     const toggleDoneTasksVisibility = (toggleDoneTasksVisibilityButtonElement) => {
         if (toggleDoneTasksVisibilityButtonElement.innerText === "Ukryj ukończone") {
@@ -17,15 +18,15 @@
 
     const toggleDoneAllTasks = () => {
         if (toggleDoneAllTasksButtonElement.innerText === "Zaznacz wszystkie") {
-            for (const task in tasks) {
-                tasks[task].done = true;
-            }
+            tasks = tasks.map((task) => {
+                return { task: task.task, done: true };
+            });
 
             toggleDoneAllTasksButtonElement.innerText = "Odznacz Wszystkie";
         } else {
-            for (const task in tasks) {
-                tasks[task].done = false;
-            }
+            tasks = tasks.map((task) => {
+                return { task: task.task, done: false };
+            });
 
             toggleDoneAllTasksButtonElement.innerText = "Zaznacz wszystkie";
         }
@@ -47,7 +48,7 @@
     };
 
     const addNewTask = (newTaskElement) => {
-        tasks.push({ task: `${newTaskElement.value.trim()}`, done: false });
+        tasks = [...tasks, { task: `${newTaskElement.value.trim()}`, done: false }];
         newTaskElement.value = "";
         render();
     };
@@ -66,14 +67,18 @@
     };
 
     const removeTask = (taskIndex) => {
-        tasks.splice(taskIndex, 1);
-
+        tasks = [...tasks.slice(0, +taskIndex), ...tasks.slice(+taskIndex + 1)];
         render();
     };
 
     const toggleTaskDone = (taskIndex) => {
-        tasks[taskIndex].done = !tasks[taskIndex].done;
-        toggleAllTasksDoneButtonName();
+        tasks = tasks.map((task) => {
+            if (tasks.indexOf(task) === taskIndex) {
+                return { task: task.task, done: !task.done };
+            } else {
+                return { task: task.task, done: task.done };
+            }
+        });
         render();
     };
 
@@ -95,7 +100,7 @@
         });
     };
 
-    const render = () => {
+    const renderList = () => {
         const tasksList = document.querySelector(".js-tasks");
         let htmlString = "";
 
@@ -108,13 +113,25 @@
 
         const formElement = document.querySelector(".js-form");
         formElement.addEventListener("submit", onFormSubmit);
+    };
 
+    const renderButtons = () => {
+        switch (tasks.length) {
+            case 0:
+                return toggleDoneAllTasksButtonElement.classList.add("div__helpButton--hidden"), toggleDoneTasksVisibilityButtonElement.classList.add("div__helpButton--hidden");
+            default:
+                return toggleDoneAllTasksButtonElement.classList.remove("div__helpButton--hidden"), toggleDoneTasksVisibilityButtonElement.classList.remove("div__helpButton--hidden");
+        }
+    };
+
+    const render = () => {
+        renderList();
+        renderButtons();
         bindEvents();
+        toggleAllTasksDoneButtonName();
     };
 
     const init = () => {
-        const toggleDoneTasksVisibilityButtonElement = document.querySelector(".js-toggleDoneTasksVisibility");
-
         render();
 
         toggleDoneAllTasksButtonElement.addEventListener("click", () => {

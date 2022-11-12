@@ -85,7 +85,6 @@
     margin: 0;
     border: none;
     display: inline-block;
-    /* grid-area: h2; */
 }
 
 .section__list {
@@ -122,7 +121,7 @@
     }
 }
 
-.div__helpButton--toggleDonekAll {
+.div__helpButton--toggleDoneAll {
     grid-area: checkingAllButton;
 }
 
@@ -134,4 +133,8 @@
 
 .div__helpButton:hover {
     cursor: pointer;
+}
+
+.div__helpButton--hidden {
+    display: none;
 }
